@@ -1,13 +1,14 @@
-chrome.storage.sync.get({
+chrome.storage.local.get({
     pages: [],
-	toHide: [],
-	replacement: []
+	toHide: ["Martí Alonso"], //Temp value for testing
+	replacement: ["El Tímido"] //Temp value for testing
   }, function(items) {
-    var pages = items.pages;
+	var pages = items.pages;
 	var toHide = items.toHide;
 	var replacement = items.replacement;
+	var currentUrl = location.toString();
 	for (var i = 0; i < pages.length; i++) {
-		if (window.location.hostname.contains(pages[i])) {
+		if (pages[i] != '' && currentUrl.includes(pages[i])) {
 			for (var j = 0; j < toHide.length; j++) {
 				hideStuff(toHide[j], replacement[j]);
 			}

@@ -52,8 +52,10 @@ function addUrl(page) {
 function save() {
 	var items = [];
 	for (var i = 0; i < urlElements.length; i++) {
-		var element = urlElements[i];
-		items.push(element.getElementsByTagName('input')[0].value);
+		var url = urlElements[i].getElementsByTagName('input')[0].value;
+		if (url != '') {
+			items.push(url);
+		}
 	}
 	chrome.storage.local.set({pages: items}, function() {
 		var status = document.getElementById('status');
