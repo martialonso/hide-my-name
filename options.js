@@ -134,7 +134,7 @@ function save() {
 	}
 	chrome.storage.local.set({pages: _pages, toHide: _toHide, replacement: _replacement}, function() {
 		var status = document.getElementById('status');
-		status.textContent = 'Options saved.';
+		status.textContent = 'Options saved';
 		setTimeout(function() {
 			status.textContent = '';
 		}, 2000);
@@ -142,3 +142,11 @@ function save() {
 }
 
 document.getElementById('save').addEventListener('click', save);
+
+function clear() {
+	chrome.storage.local.set({pages: [], toHide: [], replacement: []}, function() {
+		location.reload();
+	});
+}
+
+document.getElementById('clear').addEventListener('click', clear);
