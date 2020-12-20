@@ -1,7 +1,7 @@
 chrome.storage.local.get({
     pages: [],
-	toHide: ["Martí Alonso"], //Temp value for testing
-	replacement: ["El Tímido"] //Temp value for testing
+	toHide: [],
+	replacement: []
   }, function(items) {
 	var pages = items.pages;
 	var toHide = items.toHide;
