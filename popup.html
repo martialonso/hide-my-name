@@ -3,7 +3,7 @@
 <head>
     <style>
 		body {
-			width: 230px;
+			width: 200px;
 			margin: 10px;
 		}
 		
@@ -27,29 +27,40 @@
 			background-color: #c6c6c6;
 		}
 		
-		.activebox {
+		.box {
 			margin: 5px 0;
-		}
-		
-		.activeLabel {
 			font-size: 14px;
 		}
 		
-		.activeInput {
+		.alignLabel {
 			position: relative;
 			vertical-align: middle;
 			bottom: 1px;
 		}
+		
+		.fa-gear {
+			margin-left: 6px;
+		}
+		
+		a#options:hover {
+			cursor:pointer;
+		}
     </style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="titlebox">
 		<span class="title">Hide my name!</h1>
 	</div>
 	<div class="separator"></div>
-	<div class="activebox">
-		<label class="activeLabel">Active: <input class="activeInput" type="checkbox" id="active"/></label>
+	<div class="box">
+		<label>Active: <input class="alignLabel" type="checkbox" id="active"/></label>
 	</div>
+	<div class="separator"></div>
+	<div class="box">
+		<a id="options">Configuration<i class="fa fa-gear alignLabel" style="font-size:18px"></i></a>
+	</div>
+		
     <script src="popup.js"></script>
 </body>
 </html>
